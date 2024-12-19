@@ -1,0 +1,11 @@
+```yaml
+services:
+    type: web
+    env: python
+    buildCommand: "./render-build.sh"
+    startCommand: "gunicorn recipes_project.wsgi --log-file -"
+    healthCheckPath: "/"
+    envVars:
+        key: SECRET_KEY
+        fromSecret: secret_key
+        autoDeploy: true

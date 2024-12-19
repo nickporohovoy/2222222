@@ -1,0 +1,12 @@
+<!-- templates/recipes_app/login.html -->
+{% extends 'recipes_app/base.html' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Войти</button>
+</form>
+{% endblock %}
